@@ -123,15 +123,15 @@
 				foreach ($this->_records['data-sources'] as $data) $ds_total += $data[1];
 
 				$this->_records = array(
-					array(__('Total Database Queries'), $this->_dbstats['queries'], NULL, NULL, false),
-					array(__('Slow Queries (> 0.09s)'), (string)count($this->_dbstats['slow-queries']), NULL, NULL, false),
+					array(__('Total Database Queries'), $this->_dbstats['queries'], null, null, false),
+					array(__('Slow Queries (> 0.09s)'), (string)count($this->_dbstats['slow-queries']), null, null, false),
 					array(__('Total Time Spent on Queries'), $this->_dbstats['total-query-time']),
 					array(__('Time Triggering All Events'), $event_total),
 					array(__('Time Running All Data Sources'), $ds_total),
 					array(__('XML Generation'), $xml_generation[1]),
 					array(__('XSLT Transformation'), $xsl_transformation[1]),
 					array(__('Output Creation Time'), Symphony::Profiler()->retrieveTotalRunningTime()),
-					array(__('Total Memory Usage'), General::formatFilesize(Symphony::Profiler()->retrieveTotalMemoryUsage()), NULL, NULL, false),
+					array(__('Total Memory Usage'), General::formatFilesize(Symphony::Profiler()->retrieveTotalMemoryUsage()), null, null, false),
 				);
 
 				foreach ($this->_records as $data) {
