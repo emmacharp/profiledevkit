@@ -240,19 +240,19 @@
 
 					}
 					elseif ($this->_view == 'slow-queries') {
-
+						$value = $data[1];
 						if(!isset($data[4]) || $data[4] !== false){
-							$data[1] = number_format($data[1], 4) . ' s';
+							$value = number_format($data[1], 4) . ' s';
 						}
 
-						$row->appendChild(new XMLElement('td', $data[1]));
+						$row->appendChild(new XMLElement('td', $value));
 
 					}
 					else {
 						$row->appendChild(new XMLElement('td', number_format($data[1], 4) . ' s from ' . $data[4] . ' ' . ($data[4] == 1 ? 'query' : 'queries')));
 					}
 
-					$ds_total += $data[1];
+					$ds_total += intval($data[1]);
 					$table->appendChild($row);
 				}
 			}
