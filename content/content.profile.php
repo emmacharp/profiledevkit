@@ -18,7 +18,7 @@
 			}
 		}
 
-		public function build() {
+		public function build(array $context = []) {
 			$this->_view = (strlen(trim($_GET['profile'])) == 0 ? 'general' : $_GET['profile']);
 
 			// Build statistics
